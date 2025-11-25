@@ -1,0 +1,14 @@
+{
+    "toki": {
+        "name": "ときくん",
+        "icon": "/static/icons/toki.png"
+    },
+    "hana": {
+        "name": "はなちゃん",
+        "icon": "/static/icons/hana.png"
+    },
+    "riku": {
+        "name": "りく",
+        "icon": "/static/icons/riku.png"
+    }
+}

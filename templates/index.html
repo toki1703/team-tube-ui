@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- メタ情報（画面設定など） -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>グループワーク課題：グループ２（仮題）</title>
+
+    <!-- favicon 関連 -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+
+    <!-- OGPプレビューカード -->
+    <meta property="og:title" content="グループワーク課題：グループ2の曲紹介サイト">
+    <meta property="og:description" content="メンバーの好きな曲を紹介するYouTube風サイトです！">
+    <meta property="og:image" content="{{ url_for('static', filename='ogp.png') }}">
+    <meta property="og:type" content="website">
+    
+    <!-- CSSの適用 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+    <!-- Googleフォント関連 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
+
+    <!-- MediaChromeおよびYouTubeテーマの適用 -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/media-chrome@1.0/+esm"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/muxinc/media-chrome@1.0/src/js/themes/youtube.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/youtube-video-element@1"></script>
+  </head>
+
+  <body>
+    <!-- 背景画僧を好きにつけたり、背景色を設定するなどのカスタマイズ、どうぞ！ -->
+
+    <!-- タイトルを決めて表示します -->
+    <h1 class="kaisei-decol-regular">ときくんの部屋</h1>
+    <!-- <img src="https://www.gravatar.com/avatar/d61051c163392dfe2da8acb1dbd0df06?s=256" alt="toki1703 Image" style="border-radius:50%;width:64px;"> -->
+    <br>
+
+  <table id="video-table" border="1"></table>
+
+  <script>
+    async function loadVideos() {
+        const response = await fetch("/api/videos");
+        const videos = await response.json();
+
+        const table = document.getElementById("video-table");
+        let row;
+
+        const COLS = 4; // 4列固定
+
+        videos.forEach((v, index) => {
+            // 新しい行の開始
+            if (index % COLS === 0) {
+                row = document.createElement("tr");
+                table.appendChild(row);
+            }
+
+            // 通常の動画セル
+            const td = document.createElement("td");
+            td.innerHTML = `
+                <media-theme-youtube>
+                    <youtube-video
+                        src="${v.url}"
+                        slot="media"
+                        playsinline
+                        crossorigin
+                        webkit-playsinline
+                    ></youtube-video>
+                </media-theme-youtube>
+                <h4 class="title">${v.title}</h4>
+                <h5 class="artist">${v.artist}</h5>
+            `;
+            row.appendChild(td);
+        });
+
+        // 最後の行が4列より少ない場合は空白セルを追加
+        const remainder = videos.length % COLS;
+        if (remainder !== 0) {
+            const emptyCellsNeeded = COLS - remainder;
+            for (let i = 0; i < emptyCellsNeeded; i++) {
+                const emptyTd = document.createElement("td");
+                emptyTd.classList.add("empty-cell"); // CSSで調整可能
+                row.appendChild(emptyTd);
+            }
+        }
+    }
+
+    // ページ読み込み時に実行
+    loadVideos();
+  </script>
+
+  </body>
+</html>

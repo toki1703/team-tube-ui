@@ -1,0 +1,67 @@
+  /* UIの基礎設定 */
+    html {  font-size: 11px; }
+    body { font-family: sans-serif; text-align: center; background-color:#fff; }
+    h1 { color: #5C8374; }
+
+  /* フォント読み込み（Google Fonts） */
+
+  .kaisei-decol-regular {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+
+  /* MediaChromeの設定 */
+    media-theme-youtube {
+      border-radius: 8px;
+      width: 100%;
+      z-index:99999;
+      overflow: hidden;
+      display: block; /* ないと radius が効かないことがある */
+    }
+
+    video,youtube-video {
+      aspect-ratio: 16 / 9; /* 動画のアスペクト比を16:9に固定 */
+    }
+
+  /* MediaChromeのカスタムカラー設定 */
+
+    .waku {
+      background-color:rgba(255,255,255,0.7);
+      color:#00A4AC;
+    }
+
+  /* レイアウト構成の設定（テーブル要素） */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table tr td {
+      width: 25%;        /* 4分割固定 */
+      vertical-align: top;
+      padding: 10px;
+    }
+    table,tr,td {
+      border: none;
+    }
+    td {
+      padding: 0 4px 0 4px;
+      text-align: left;
+    }
+    .title {
+      color: #0f0f0f;
+      padding: 0;
+      margin: 0;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      font-weight: 500;
+    }
+    .artist {
+      color: #606060;
+      padding: 0;
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      font-weight: 400;
+    }

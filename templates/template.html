@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- メタ情報（画面設定など） -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>グループワーク課題：グループ２（仮題）</title>
+
+    <!-- favicon 関連 -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+
+    <!-- OGPプレビューカード -->
+    <meta property="og:title" content="グループワーク課題：グループ2の曲紹介サイト">
+    <meta property="og:description" content="メンバーの好きな曲を紹介するYouTube風サイトです！">
+    <meta property="og:image" content="{{ url_for('static', filename='ogp.png') }}">
+    <meta property="og:type" content="website">
+    
+    <!-- CSSの適用 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+    <!-- Googleフォント関連 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
+
+    <!-- MediaChromeおよびYouTubeテーマの適用 -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/media-chrome@1.0/+esm"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/muxinc/media-chrome@1.0/src/js/themes/youtube.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/youtube-video-element@1"></script>
+  </head>
+
+  <body>
+    <!-- 背景画僧を好きにつけたり、背景色を設定するなどのカスタマイズ、どうぞ！ -->
+
+    <!-- タイトルを決めて表示します -->
+    <h1 class="kaisei-decol-regular">ときくんの部屋</h1>
+    <!-- <img src="https://www.gravatar.com/avatar/d61051c163392dfe2da8acb1dbd0df06?s=256" alt="toki1703 Image" style="border-radius:50%;width:64px;"> -->
+    <br>
+
+  <table border="1">
+    <!-- srcのURL、タイトル、アーティスト名を各自で変更してください。 -->
+    <tr><!-- 1段目 -->
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+
+        <!-- YouTubeに動画がない場合は、自分で用意した動画ファイルをアップロードして使用することもできます。
+          <video slot="media"
+            src="{{ url_for('static', filename='video.mp4') }}"
+            playsinline webkit-playsinline preload="none"></video>
+         -->
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+    </tr>
+    <tr><!-- 2段目、以降は必要に応じて、<tr>～</tr>のコピペで追加してください -->
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+
+        <!-- YouTubeに動画がない場合は、自分で用意した動画ファイルをアップロードして使用することもできます。
+          <video slot="media"
+            src="{{ url_for('static', filename='video.mp4') }}"
+            playsinline webkit-playsinline preload="none"></video>
+         -->
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+      <td>
+        <media-theme-youtube>
+          <youtube-video
+            src="https://www.youtube.com/watch?v=Soy4jGPHr3g"
+            slot="media"
+            playsinline
+            crossorigin
+            webkit-playsinline
+          ></youtube-video>
+        </media-theme-youtube>
+        <h4 class="title">テトリス</h4><h5 class="artist">柊マグネタイト</h5>
+      </td>
+    </tr>
+  </table>
+  </body>
+</html>
